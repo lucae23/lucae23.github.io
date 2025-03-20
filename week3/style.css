@@ -1,0 +1,42 @@
+h1 {
+  color: red;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+h2 {
+  color: green;
+  font-size: 2rem;
+}
+h3 {
+  color: mediumslateblue;
+  font-size: 1.5rem;
+}
+p {
+  color: darkred;
+}
+.blue-color {
+  color: rgb(0, 102, 255);
+}
+#outcome {
+  color: brown;
+}
+body {
+  background-color: #7aceff;
+  font-size: 1rem;
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+section {
+  text-align: center;
+  border: 1px solid rebeccapurple;
+}
+/* 
+    curly braces {}
+    square brackets []
+    round brackets ()
+    semicolon ;
+    colon :
+    syntax : rules of the language
+    parantheses <>
+    cmmd / /*   */
