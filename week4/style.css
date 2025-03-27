@@ -30,3 +30,11 @@ p {
 span {
   color: rgb(0, 208, 255);
 }
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
