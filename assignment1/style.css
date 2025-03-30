@@ -3,12 +3,13 @@ h1 {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 10px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h2 {
   font-size: 15px;
   text-align: center;
+  margin-bottom: 35px;
 }
 
 body {
@@ -16,4 +17,26 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+  background-color: #4169e1;
+  /* I chose royal blue for the backround colour, 
+  as this is one of my favourite colours. I thought
+   a personalized colour pallette fitted as I was writing 
+   about my personal experience with another website*/
+}
+
+.prompt1 {
+  background-color: #cb5fce;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.prompt2 {
+  background-color: #ff65a3;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.prompt3 {
+  background-color: #ff8e77;
+  padding: 15px;
 }
