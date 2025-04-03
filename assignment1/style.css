@@ -54,6 +54,13 @@ span {
   min-width: 700px;
   max-width: 700px;
   margin-top: 30px;
+  height: 75px;
+  overflow: hidden;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+}
+.prompt1:hover {
+  height: 140px;
 }
 
 .prompt2 {
@@ -62,6 +69,13 @@ span {
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 75px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
+}
+.prompt2:hover {
+  height: 230px;
 }
 
 .prompt3 {
@@ -70,13 +84,28 @@ span {
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 55px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
 }
+.prompt3:hover {
+  height: 140px;
+}
+
 .prompt4 {
   background-color: #cb5fce;
   padding: 15px;
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 75px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
+}
+.prompt4:hover {
+  height: 185px;
 }
 
 .prompt5 {
@@ -85,6 +114,13 @@ span {
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 75px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
+}
+.prompt5:hover {
+  height: 180px;
 }
 
 .prompt6 {
@@ -93,13 +129,28 @@ span {
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 55px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
 }
+.prompt6:hover {
+  height: 160px;
+}
+
 .prompt7 {
   background-color: #cb5fce;
   padding: 15px;
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 75px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
+}
+.prompt7:hover {
+  height: 140px;
 }
 
 .prompt8 {
@@ -108,6 +159,13 @@ span {
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 75px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
+}
+.prompt8:hover {
+  height: 140px;
 }
 
 .prompt9 {
@@ -116,6 +174,13 @@ span {
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 75px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
+}
+.prompt9:hover {
+  height: 140px;
 }
 
 .prompt10 {
@@ -124,6 +189,13 @@ span {
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 75px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
+}
+.prompt10:hover {
+  height: 140px;
 }
 
 .prompt11 {
@@ -132,6 +204,13 @@ span {
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 75px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
+}
+.prompt11:hover {
+  height: 140px;
 }
 
 .prompt12 {
@@ -140,6 +219,13 @@ span {
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 75px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
+}
+.prompt12:hover {
+  height: 140px;
 }
 
 .prompt13 {
@@ -148,4 +234,11 @@ span {
   border-radius: 10px;
   min-width: 700px;
   max-width: 700px;
+  height: 75px;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  overflow: hidden;
+}
+.prompt13:hover {
+  height: 140px;
 }
