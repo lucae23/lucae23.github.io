@@ -1,17 +1,19 @@
-function checkWeather() {
-  let myTemp = document.querySelector("#myTemp");
+function checkAge() {
+  let myAge = document.querySelector("#myAge");
   let body = document.querySelector("body");
-  console.log(myTemp);
-  let temp = myTemp.value;
-  console.log("Temp value is", temp);
-  if (temp < 10) {
-    console.log("it is freexing");
-  } else if (temp >= 10 && temp < 20) {
-    console.log("It is pleasant weather");
-  } else if (temp >= 20 && temp < 35) {
-    console.log("It is nice and sunny");
-  } else if (temp >= 35) {
-    console.log("It is burning hot");
+  console.log(myAge);
+  let age = myAge.value;
+  console.log("Age value is", age);
+  if (age < 4) {
+    console.log("You are a baby");
+  } else if (age >= 4 && age < 13) {
+    console.log("You are a young child");
+  } else if (age >= 13 && age < 20) {
+    console.log("Your are a teen");
+  } else if (age >= 20 && age < 25) {
+    console.log("You are a young adult");
     body.style.backroundColor = "crimson";
+  } else if (age >= 25) {
+    console.log("You are olddddd");
   }
 }
