@@ -1,0 +1,84 @@
+:root {
+  --primary-bg-color: #0855b1;
+  --text-color: #dad3d3;
+  --main-bg-color: #434655;
+  --main-text-color: #fff;
+  --main-btn-bg-color: #938989;
+}
+
+body,
+h1,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Add additional styles as needed */
+
+/* Create a container for the main content */
+.container {
+  max-width: 1000px;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Header styling */
+header {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Media player styling */
+.media-player {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.media-player video {
+  max-width: 100%;
+}
+
+.custom-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.custom-controls button {
+  background-color: #a8aabc;
+  color: var(--main-text-color);
+  border: none;
+  border-radius: 20%;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
