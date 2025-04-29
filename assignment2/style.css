@@ -6,16 +6,9 @@
   --main-btn-bg-color: #938989;
 }
 
-body,
-h1,
-p,
-ul {
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "DM Sans", sans-serif;
+  font-size: large;
   background-color: var(--primary-bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -43,23 +36,8 @@ header {
   width: 100%;
 }
 
-/* Media player styling */
-.media-player {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.media-player video {
-  max-width: 100%;
-}
-
-.custom-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 10px;
-  width: 100%;
+#recs {
+  margin-bottom: 30px;
 }
 
 .custom-controls button {
@@ -72,6 +50,17 @@ header {
   font-size: 16px;
   display: flex;
   align-items: center;
+  margin-top: 10px;
+}
+
+.custom-controls button:hover {
+  background-color: white;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
 }
 
 /* Footer styling */
