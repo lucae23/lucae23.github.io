@@ -10,7 +10,7 @@ console.log(playPauseImg);
 playPauseButton.addEventListener("click", toggleAudio);
 
 function toggleAudio() {
-  if (relaxAudio.paused || relaxAudio.ended) {
+  if (relaxAudio.paused) {
     relaxAudio.play();
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
     document.querySelector("#msg").innerHTML = "You have been studying for";
@@ -20,13 +20,11 @@ function toggleAudio() {
     document.querySelector("#msg").innerHTML = "You have been relaxing for";
   }
 }
-
-// playPauseButton.addEventListener("click", toggleTimer);
-
-// function toggleTimer() {
-
-//  }
-// Add other functionalities here
+const audio = document.querySelector("audio");
+// This selects the audio, so that I can apply a loop
+audio.loop = true;
+// This applys a loop to the audio, so that when the audio ends it repeats,
+// allowing for music to play as long as the user wants to study
 
 window.onload = function () {
   var minutes = 0;
