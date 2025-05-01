@@ -7,9 +7,9 @@ console.log(playPauseButton);
 const playPauseImg = document.querySelector("#play-pause-img");
 console.log(playPauseImg);
 
-playPauseButton.addEventListener("click", toggleAudio);
+playPauseButton.addEventListener("click", togglePlay);
 
-function toggleAudio() {
+function togglePlay() {
   if (relaxAudio.paused) {
     relaxAudio.play();
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
@@ -25,6 +25,24 @@ const audio = document.querySelector("audio");
 audio.loop = true;
 // This applys a loop to the audio, so that when the audio ends it repeats,
 // allowing for music to play as long as the user wants to study
+
+const muteUnmuteButton = document.querySelector("#mute-unmute-button");
+console.log(muteUnmuteButton);
+
+const muteUnmuteImg = document.querySelector("#mute-unmute-img");
+console.log(muteUnmuteImg);
+
+function toggleAudio() {
+  if (relaxAudio.muted) {
+    muteUnmuteImg.src =
+      "https://img.icons8.com/ios-glyphs/30/high-volume--v2.png";
+    relaxAudio.muted = false;
+  } else {
+    muteUnmuteImg.src = "https://img.icons8.com/ios-glyphs/30/no-audio--v1.png";
+
+    relaxAudio.muted = true;
+  }
+}
 
 window.onload = function () {
   var minutes = 0;
