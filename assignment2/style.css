@@ -14,8 +14,19 @@ body {
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.sidebar {
+  min-height: 800px;
+  max-width: 400px;
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  padding: 40px;
+  background-color: #0a6ce2;
 }
 
 .container {
@@ -25,7 +36,8 @@ body {
 }
 
 #recs {
-  margin-bottom: 30px;
+  margin-bottom: 3px;
+  margin-left: 15px;
 }
 
 .custom-controls {
@@ -33,13 +45,15 @@ body {
   flex-direction: row;
   justify-content: left;
   gap: 15px;
+  margin-left: 15px;
+  border-radius: 100px;
 }
 
 .custom-controls button {
   background-color: #a8aabc;
   color: var(--main-text-color);
   border: none;
-  border-radius: 10px;
+  border-radius: 100px;
   padding: 8px 12px;
   cursor: pointer;
   display: flex;
@@ -51,13 +65,14 @@ body {
   background-color: white;
   transition: background-color 0.3s;
   -webkit-transition: background-color 0.3s;
-  /* I feel a transition here further creates a calming environment, over a more sudden change of colour */
+  /* I feel a transition here further creates a calming aesthetic, over a more sudden change of colour */
 }
 
 .timer {
   display: flex;
   flex-direction: row;
   gap: 0.3rem;
+  margin-left: 15px;
 }
 
 footer {
@@ -65,6 +80,10 @@ footer {
   /* I didn't want the footer to be distracting, so I picked a darker blue color to blend it in */
   color: #a8aabc;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px;
   width: 100%;
+  font-size: 15px;
+  display: flex;
+  gap: 2px;
+  justify-content: center;
 }
