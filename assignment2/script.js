@@ -20,17 +20,18 @@ function togglePlay() {
     document.querySelector("#msg").innerHTML = "You have been relaxing for";
   }
 }
-const audio = document.querySelector("audio");
-// This selects the audio, so that I can apply a loop
-audio.loop = true;
+
+relaxAudio.loop = true;
 // This applys a loop to the audio, so that when the audio ends it repeats,
 // allowing for music to play as long as the user wants to study
 
 const muteUnmuteButton = document.querySelector("#mute-unmute-button");
 console.log(muteUnmuteButton);
+// This fetches the mute/unmute button
 
 const muteUnmuteImg = document.querySelector("#mute-unmute-img");
 console.log(muteUnmuteImg);
+// This fetches the mute and unmute images
 
 function toggleAudio() {
   if (relaxAudio.muted) {
@@ -43,12 +44,13 @@ function toggleAudio() {
     relaxAudio.muted = true;
   }
 }
+// This is the function that causes clicking to mute the sound, and clicking again to unmute it
 
 window.onload = function () {
   var minutes = 0;
   var seconds = 0;
-  var appendSeconds = document.querySelector("#seconds");
-  var appendMinutes = document.querySelector("#minutes");
+  var countSeconds = document.querySelector("#seconds");
+  var countMinutes = document.querySelector("#minutes");
   var toggleTimer = document.querySelector("#play-pause-btn");
   var Interval;
 
@@ -56,8 +58,8 @@ window.onload = function () {
     clearInterval(Interval);
     seconds = "00";
     minutes = "00";
-    appendSeconds.innerHTML = seconds;
-    appendMinutes.innerHTML = minutes;
+    countSeconds.innerHTML = seconds;
+    countMinutes.innerHTML = minutes;
     Interval = setInterval(startTimer, 1000);
   };
 
@@ -65,23 +67,23 @@ window.onload = function () {
     seconds++;
 
     if (seconds <= 9) {
-      appendSeconds.innerHTML = "0" + seconds;
+      countSeconds.innerHTML = "0" + seconds;
     }
 
     if (seconds > 9) {
-      appendSeconds.innerHTML = seconds;
+      countSeconds.innerHTML = seconds;
     }
 
     if (seconds > 59) {
       console.log("minutes");
       minutes++;
-      appendMinutes.innerHTML = "0" + minutes;
+      countMinutes.innerHTML = "0" + minutes;
       seconds = 0;
-      appendSeconds.innerHTML = "0" + 0;
+      countSeconds.innerHTML = "0" + 0;
     }
 
     if (minutes > 9) {
-      appendMinutes.innerHTML = minutes;
+      countMinutes.innerHTML = minutes;
     }
   }
 };
