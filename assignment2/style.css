@@ -6,6 +6,15 @@
   --main-btn-bg-color: #938989;
 }
 
+header {
+  max-width: 400px;
+  font-size: larger;
+  font-weight: 500;
+  position: fixed;
+  top: 0;
+  padding: 30px;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   font-size: large;
@@ -19,14 +28,33 @@ body {
 }
 
 .sidebar {
-  min-height: 800px;
+  min-height: 734px;
   max-width: 400px;
   position: fixed;
-
   top: 0;
   right: 0;
   padding: 40px;
   background-color: #0a6ce2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#sidehead {
+  font-weight: 500;
+}
+
+#notes {
+  min-width: 300px;
+  min-height: 600px;
+  background-color: #5fa6fd;
+  border-color: #0855b1;
+  border-radius: 15px;
+  border-width: 3px;
+  padding: 12px 20px;
+  resize: none;
+  outline: none;
 }
 
 .container {
@@ -85,5 +113,5 @@ footer {
   font-size: 15px;
   display: flex;
   gap: 2px;
-  justify-content: center;
+  justify-content: right;
 }
