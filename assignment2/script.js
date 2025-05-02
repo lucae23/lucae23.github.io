@@ -21,6 +21,23 @@ function togglePlay() {
   }
 }
 
+var a = 1;
+function changeAudio() {
+  var audio = document.getElementById("relax-audio");
+  if (a == 1) {
+    audio.src = "song1.mp3";
+    a = 2;
+    document.querySelector("#change-button").innerHTML = "Song 1";
+  } else {
+    audio.src = "song2.mp3";
+    a = 1;
+    document.querySelector("#change-button").innerHTML = "Song 2";
+  }
+  document.querySelector("audio").load();
+}
+
+changeAudio();
+
 relaxAudio.loop = true;
 // This applys a loop to the audio, so that when the audio ends it repeats,
 // allowing for music to play as long as the user wants to study
