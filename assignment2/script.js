@@ -104,3 +104,23 @@ window.onload = function () {
     }
   }
 };
+
+const hideButton = document.querySelector("hide-btn");
+console.log(hideButton);
+
+var a = 1;
+function toggleHide() {
+  if (a == 1) {
+    document.getElementById("sidehead").style.visibility = "hidden";
+    document.getElementById("notes").style.visibility = "hidden";
+    document.getElementById("sidebar").style.backgroundColor = "#0855b1";
+    a = 2;
+    document.querySelector("#hide-btn").innerHTML = "Show";
+  } else {
+    document.getElementById("sidehead").style.visibility = "visible";
+    document.getElementById("notes").style.visibility = "visible";
+    document.getElementById("sidebar").style.backgroundColor = "#0a6ce2";
+    a = 1;
+    document.querySelector("#hide-btn").innerHTML = "Hide";
+  }
+}
