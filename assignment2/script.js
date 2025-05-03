@@ -37,9 +37,6 @@ const changeButton = document.querySelector("#change-button");
 console.log(changeButton);
 // This fetches the change the song choice button
 
-changeButton.addEventListener("click", changeAudio);
-// This creates an event listener that listens for when the change button is clicked
-
 function changeAudio() {
   // This creates a function so that when the button is clicked, the song choice toggles from 1 and 2
   var audio = document.getElementById("relax-audio");
@@ -71,9 +68,6 @@ console.log(muteUnmuteButton);
 const muteUnmuteImg = document.querySelector("#mute-unmute-img");
 console.log(muteUnmuteImg);
 // This fetches the mute and unmute images
-
-muteUnmuteButton.addEventListener("click", toggleAudio);
-// This creates an event listener that listens for when the mute button is clicked
 
 function toggleAudio() {
   // This creates a function so that when the button is clicked, the songs audio either is heard or muted
