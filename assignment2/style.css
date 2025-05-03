@@ -1,5 +1,7 @@
 :root {
   --primary-bg-color: #0855b1;
+  /* I went for a monochrome blue colour pallete, as this to me is a very calming colour
+  and not too bright so as not to distract people from studying */
   --text-color: #dad3d3;
   --main-bg-color: #434655;
   --main-text-color: #000000;
@@ -13,6 +15,7 @@ header {
   position: fixed;
   top: 0;
   padding: 30px;
+  /* This fixes the position of the header in the top left */
 }
 
 body {
@@ -24,6 +27,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  /* This pushes the text and buttons to the left bottom corner, as too much space underneath 
+  them appeared strange */
   gap: 15px;
 }
 
@@ -33,6 +38,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
+  /* This locks the sidebar in place to the right */
   padding: 40px;
   background-color: #0a6ce2;
   display: flex;
@@ -55,6 +61,8 @@ body {
   padding: 12px 20px;
   resize: none;
   outline: none;
+  /* This makes the note area very large, as I thought this makes it look more like a notice
+  board that one might have in there study */
 }
 
 #hide-btn {
@@ -70,23 +78,25 @@ body {
   right: 0;
   margin-right: 50px;
   margin-bottom: 70px;
+  /* This code ensures the hide button is to the far right, as I thought once the sidebar
+  is hidden, the button should be close to the edge, so as to not look out of place */
 }
 
 #hide-btn:hover {
   background-color: white;
   transition: background-color 0.3s;
   -webkit-transition: background-color 0.3s;
+  /* I feel a transition here further creates a calming aesthetic, over a more sudden change of colour */
 }
 
 .container {
-  max-width: 1000px;
-  width: 100%;
   padding: 10px;
 }
 
 #recs {
   margin-bottom: 3px;
   margin-left: 15px;
+  /* This prevents the text from touches the edge of the screen */
 }
 
 .custom-controls {
@@ -95,7 +105,7 @@ body {
   justify-content: left;
   gap: 15px;
   margin-left: 15px;
-  border-radius: 100px;
+  /* The above just ensures all the buttons are spaced evenly apart side by side */
 }
 
 .custom-controls button {
@@ -103,15 +113,15 @@ body {
   color: var(--main-text-color);
   border: none;
   border-radius: 100px;
+  /* I added a circular border to the buttons as this aligns with the calm aesethetic */
   padding: 8px 12px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
   margin-top: 10px;
 }
 
 .custom-controls button:hover {
   background-color: white;
+  /* This is simply to highlight the button can be pressed */
   transition: background-color 0.3s;
   -webkit-transition: background-color 0.3s;
   /* I feel a transition here further creates a calming aesthetic, over a more sudden change of colour */
@@ -122,6 +132,7 @@ body {
   flex-direction: row;
   gap: 0.3rem;
   margin-left: 15px;
+  /* This allows for the message abd the timer to be next to eachother, so it appears like one sentence */
 }
 
 footer {
@@ -135,4 +146,5 @@ footer {
   display: flex;
   gap: 2px;
   justify-content: right;
+  /* this moves the links to the icons to the right so they are less distracting */
 }
