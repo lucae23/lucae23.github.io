@@ -29,11 +29,17 @@ header {
 }
 
 .beats {
-  background-color: lightgray;
+  background-color: gray;
   padding: 80px;
 }
 
 .drums {
-  background-color: grey;
+  background-color: lightgray;
   padding: 80px;
+  cursor: pointer;
+  max-height: 200px;
+}
+
+.drums:hover {
+  background-color: lightgreen;
 }
