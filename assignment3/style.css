@@ -33,12 +33,13 @@ header {
   background-color: gray;
   padding: 80px;
   border-radius: 10%;
+  min-height: 186px;
 }
 
 .drums {
   background-color: lightgray;
   padding: 80px;
-  cursor: pointer;
+  cursor: grab;
   max-height: 200px;
   border-radius: 10%;
 }
@@ -62,7 +63,7 @@ footer {
   padding: 10px;
   border: none;
   border-radius: 10%;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 7px #999;
 }
 
 .buttons:hover {
@@ -72,6 +73,6 @@ footer {
 }
 
 .buttons:active {
-  box-shadow: 0 5px #999;
-  transform: translateY(4px);
+  box-shadow: 0 4px #999;
+  transform: translateY(3px);
 }
