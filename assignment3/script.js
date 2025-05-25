@@ -48,7 +48,7 @@ resetButton.addEventListener("click", function () {
   resetGame();
 });
 
-var delay = 400;
+var delay = 500;
 var a = 1;
 
 const speedButton = document.querySelector("#speed");
@@ -58,19 +58,30 @@ speedButton.addEventListener("click", toggleSpeed);
 
 function toggleSpeed() {
   if (a == 1) {
-    delay = 300;
-    a = 2;
-    document.querySelector("#speed").innerHTML = "Medium";
-  } else if (a == 2) {
-    delay = 200;
-    a = 3;
-    document.querySelector("#speed").innerHTML = "Fast";
-  } else {
     delay = 400;
+    a = 2;
+    document.querySelector("#speed").innerHTML = "Level 2";
+  } else if (a == 2) {
+    delay = 300;
+    a = 3;
+    document.querySelector("#speed").innerHTML = "Level 3";
+  } else if (a == 3) {
+    delay = 200;
+    a = 4;
+    document.querySelector("#speed").innerHTML = "Level 4";
+  } else if (a == 4) {
+    delay = 100;
+    a = 5;
+    document.querySelector("#speed").innerHTML = "Level 5";
+  } else {
+    delay = 500;
     a = 1;
-    document.querySelector("#speed").innerHTML = "Slow";
+    document.querySelector("#speed").innerHTML = "Level 1";
   }
 }
+
+const playPauseImg = document.querySelector("#play-pause-img");
+console.log(playPauseImg);
 
 let isPlaying = false;
 let loopTimeoutId = null;
@@ -80,7 +91,7 @@ function playSoundFromLabels() {
   const loopDelay = delay * labels.length;
 
   if (!isPlaying) {
-    document.querySelector("#play").innerHTML = "Pause";
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
     isPlaying = true;
 
     function playSequence() {
@@ -99,7 +110,7 @@ function playSoundFromLabels() {
     playSequence();
     speedButton.disabled = true;
   } else {
-    document.querySelector("#play").innerHTML = "Play";
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
     isPlaying = false;
     speedButton.disabled = false;
 
