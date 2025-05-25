@@ -37,6 +37,15 @@ function handleDrop() {
   }
 }
 
+beats.forEach((beats) => {
+  beats.addEventListener("click", clearBeat);
+});
+
+function clearBeat() {
+  event.target.textContent = "";
+  event.target.style.backgroundColor = "gray";
+}
+
 const resetButton = document.querySelector("#reset");
 console.log(resetButton);
 
@@ -163,9 +172,13 @@ function toggleStyle() {
     audio.src = "snare3.mp3";
     a = 2;
     document.querySelector("#style").innerHTML = "Soft";
+  } else if (a == 2) {
+    audio.src = "snare2.mp3";
+    a = 3;
+    document.querySelector("#style").innerHTML = "Heavy";
   } else {
     audio.src = "snare.mp3";
     a = 1;
-    document.querySelector("#style").innerHTML = "Heavy";
+    document.querySelector("#style").innerHTML = "Standard";
   }
 }

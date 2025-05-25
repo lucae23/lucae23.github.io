@@ -44,7 +44,7 @@ header:hover {
 }
 
 p {
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 1.4rem;
   color: gray;
 }
@@ -54,6 +54,7 @@ p {
   padding: 80px;
   border-radius: 10%;
   min-height: 186px;
+  cursor: pointer;
 }
 
 .drums {
