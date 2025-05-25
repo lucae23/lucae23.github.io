@@ -48,12 +48,35 @@ resetButton.addEventListener("click", function () {
   resetGame();
 });
 
+var delay = 400;
+var a = 1;
+
+const speedButton = document.querySelector("#speed");
+console.log(speedButton);
+
+speedButton.addEventListener("click", toggleSpeed);
+
+function toggleSpeed() {
+  if (a == 1) {
+    delay = 300;
+    a = 2;
+    document.querySelector("#speed").innerHTML = "Medium";
+  } else if (a == 2) {
+    delay = 200;
+    a = 3;
+    document.querySelector("#speed").innerHTML = "Fast";
+  } else {
+    delay = 400;
+    a = 1;
+    document.querySelector("#speed").innerHTML = "Slow";
+  }
+}
+
 let isPlaying = false;
 let loopTimeoutId = null;
 
 function playSoundFromLabels() {
   const labels = document.querySelectorAll(".beats");
-  var delay = 100;
   const loopDelay = delay * labels.length;
 
   if (!isPlaying) {
@@ -74,9 +97,11 @@ function playSoundFromLabels() {
     }
 
     playSequence();
+    speedButton.disabled = true;
   } else {
     document.querySelector("#play").innerHTML = "Play";
     isPlaying = false;
+    speedButton.disabled = false;
 
     if (loopTimeoutId) {
       clearTimeout(loopTimeoutId);
@@ -107,10 +132,3 @@ function playSound(text) {
 
   audio.play();
 }
-
-const playButton = document.querySelector("play");
-console.log(playButton);
-
-playButton.addEventListener("click", togglePlay);
-
-function togglePlay() {}

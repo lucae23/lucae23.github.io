@@ -56,7 +56,7 @@ footer {
 }
 
 .buttons {
-  max-width: 80px;
+  max-width: 120px;
   max-height: 80px;
   cursor: pointer;
   padding: 10px;
@@ -74,4 +74,10 @@ footer {
 .buttons:active {
   box-shadow: 0 4px #999;
   transform: translateY(3px);
+}
+
+.buttons:disabled {
+  color: white;
+  background-color: lightgray;
+  cursor: default;
 }
