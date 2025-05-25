@@ -14,7 +14,7 @@ body {
   gap: 15px;
   text-align: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-top: 200px;
+  margin-top: 220px;
   margin-bottom: 50px;
 }
 
@@ -26,6 +26,27 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  height: 70px;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+header:hover {
+  height: 180px;
+}
+
+#down {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  cursor: pointer;
+}
+
+p {
+  margin-top: 40px;
+  font-size: 1.4rem;
+  color: gray;
 }
 
 .beats {
@@ -64,12 +85,12 @@ footer {
   border: none;
   border-radius: 10%;
   box-shadow: 0 7px #999;
+  transition: background-color 0.1s;
 }
 
 .buttons:hover {
   background-color: lightgreen;
   border-radius: 10%;
-  transition: background-color 0.1s;
 }
 
 .buttons:active {
