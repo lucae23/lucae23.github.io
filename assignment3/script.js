@@ -121,25 +121,51 @@ function playSoundFromLabels() {
   }
 }
 
+const snareAudio = document.querySelector("#snare");
+console.log(snareAudio);
+
+const kickAudio = document.querySelector("#kick");
+console.log(kickAudio);
+
+const hihatAudio = document.querySelector("#hihat");
+console.log(hihatAudio);
+
+const tomAudio = document.querySelector("#tom");
+console.log(tomAudio);
+
 function playSound(text) {
   let audio;
 
   if (text === "kick") {
-    audio = new Audio();
-    audio.src = "kick.wav";
+    audio = kickAudio;
   } else if (text === "snare") {
-    audio = new Audio();
-    audio.src = "snare.wav";
+    audio = snareAudio;
   } else if (text === "hi-hat") {
-    audio = new Audio();
-    audio.src = "hihat.wav";
+    audio = hihatAudio;
   } else if (text === "tom") {
-    audio = new Audio();
-    audio.src = "tom.wav";
+    audio = tomAudio;
   } else {
     console.log("No matching sound for:", text);
     return;
   }
-
+  audio.currentTime = 0;
   audio.play();
+}
+
+const styleButton = document.querySelector("#style");
+console.log(styleButton);
+
+styleButton.addEventListener("click", toggleStyle);
+
+function toggleStyle() {
+  var audio = document.getElementById("snare");
+  if (a == 1) {
+    audio.src = "snare3.mp3";
+    a = 2;
+    document.querySelector("#style").innerHTML = "Soft";
+  } else {
+    audio.src = "snare.mp3";
+    a = 1;
+    document.querySelector("#style").innerHTML = "Heavy";
+  }
 }

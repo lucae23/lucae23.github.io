@@ -17,6 +17,10 @@
   <body>
     <header>Beat Sequence</header>
     <div id="interface">
+      <audio src="snare.mp3" id="snare"></audio>
+      <audio src="kick.mp3" id="kick"></audio>
+      <audio src="hihat.mp3" id="hihat"></audio>
+      <audio src="tom.mp3" id="tom"></audio>
       <div class="drums" draggable="true">Snare</div>
       <div class="drums" draggable="true">Hi-Hat</div>
       <div class="drums" draggable="true">Kick</div>
@@ -25,10 +29,10 @@
       <div class="beats" id="beat2"></div>
       <div class="beats" id="beat3"></div>
       <div class="beats" id="beat4"></div>
-      <div class="beats" id="beat5"></div>
+       <div class="beats" id="beat5"></div>
       <div class="beats" id="beat6"></div>
       <div class="beats" id="beat7"></div>
-      <div class="beats" id="beat8"></div>
+      <div class="beats" id="beat8"></div> 
     </div>
     <footer>
       <button class="buttons" id="play" onclick="playSoundFromLabels()">
@@ -48,6 +52,7 @@
               
             />
       <button class="buttons" id="speed">Level 1</button>
+      <button class="buttons" id="style">Heavy</button>
     </footer>
   </body>
 </html>
