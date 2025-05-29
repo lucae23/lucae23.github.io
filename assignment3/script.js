@@ -164,6 +164,9 @@ function playSound(text) {
 const styleButton = document.querySelector("#style");
 console.log(styleButton);
 
+const powerImg = document.querySelector("#power-img");
+console.log(powerImg);
+
 styleButton.addEventListener("click", toggleStyle);
 
 function toggleStyle() {
@@ -171,14 +174,14 @@ function toggleStyle() {
   if (a == 1) {
     audio.src = "snare3.mp3";
     a = 2;
-    document.querySelector("#style").innerHTML = "Soft";
+    powerImg.src = "power1.png";
   } else if (a == 2) {
     audio.src = "snare2.mp3";
     a = 3;
-    document.querySelector("#style").innerHTML = "Heavy";
+    powerImg.src = "power3.png";
   } else {
     audio.src = "snare.mp3";
     a = 1;
-    document.querySelector("#style").innerHTML = "Standard";
+    powerImg.src = "power2.png";
   }
 }
