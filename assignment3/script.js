@@ -161,15 +161,15 @@ function playSound(text) {
   audio.play();
 }
 
-const styleButton = document.querySelector("#style");
-console.log(styleButton);
+const powerButton = document.querySelector("#power");
+console.log(powerButton);
 
 const powerImg = document.querySelector("#power-img");
 console.log(powerImg);
 
-styleButton.addEventListener("click", toggleStyle);
+powerButton.addEventListener("click", togglePower);
 
-function toggleStyle() {
+function togglePower() {
   var audio = document.getElementById("snare");
   if (a == 1) {
     audio.src = "snare3.mp3";
