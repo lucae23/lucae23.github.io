@@ -4,20 +4,6 @@
   font-family: "Geo", sans-serif;
 }
 
-body {
-  font-size: 1.5rem;
-  margin: 200px;
-}
-
-#interface {
-  display: grid;
-  gap: 15px;
-  text-align: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-top: 220px;
-  margin-bottom: 50px;
-}
-
 header {
   background-color: lightgray;
   min-width: 2000px;
@@ -47,6 +33,63 @@ p {
   margin-top: 20px;
   font-size: 1.4rem;
   color: gray;
+}
+
+body {
+  font-size: 1.5rem;
+  margin: 200px;
+}
+
+.slider-container {
+  background-color: lightgray;
+  padding: 30px;
+  position: fixed;
+  right: 0;
+  margin-right: 50px;
+}
+.slider {
+  -webkit-appearance: none;
+  height: 50%;
+  background: gray;
+  writing-mode: vertical-lr;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: lightgreen;
+  cursor: pointer;
+}
+
+.slider:hover::-webkit-slider-thumb {
+  scale: 1.2;
+  transition: scale 0.3s;
+}
+
+#beat5,
+#beat6,
+#beat7,
+#beat8,
+#beat9,
+#beat10,
+#beat11,
+#beat12,
+#beat13,
+#beat14,
+#beat15,
+#beat16 {
+  display: none;
+}
+
+#interface {
+  display: grid;
+  gap: 15px;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 190px;
+  margin-bottom: 50px;
 }
 
 .beats {

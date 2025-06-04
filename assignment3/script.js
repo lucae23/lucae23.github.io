@@ -96,23 +96,35 @@ let isPlaying = false;
 let loopTimeoutId = null;
 
 function playSoundFromLabels() {
-  const labels = document.querySelectorAll(".beats");
-  const loopDelay = delay * labels.length;
+  const allBeats = document.querySelectorAll(".beats");
+  let visibleBeats = [];
+
+  // First: Count and collect visible beats using getComputedStyle
+  for (let i = 0; i < allBeats.length; i++) {
+    const beat = allBeats[i];
+    const display = window.getComputedStyle(beat).display;
+
+    if (display !== "none") {
+      visibleBeats.push(beat);
+    }
+  }
+
+  const loopDelay = delay * visibleBeats.length;
 
   if (!isPlaying) {
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
     isPlaying = true;
 
     function playSequence() {
-      labels.forEach((label, index) => {
-        const soundName = label.textContent.trim().toLowerCase();
+      for (let i = 0; i < visibleBeats.length; i++) {
+        const beat = visibleBeats[i];
+        const soundName = beat.textContent.trim().toLowerCase();
 
         setTimeout(() => {
           playSound(soundName);
-        }, index * delay);
-      });
+        }, i * delay);
+      }
 
-      // Save the timeout ID so we can cancel it later
       loopTimeoutId = setTimeout(playSequence, loopDelay);
     }
 
@@ -183,5 +195,54 @@ function togglePower() {
     audio.src = "snare.mp3";
     a = 1;
     powerImg.src = "power2.png";
+  }
+}
+
+const beat1 = document.getElementById("beat1");
+const beat2 = document.getElementById("beat2");
+const beat3 = document.getElementById("beat3");
+const beat4 = document.getElementById("beat4");
+const beat5 = document.getElementById("beat5");
+const beat6 = document.getElementById("beat6");
+const beat7 = document.getElementById("beat7");
+const beat8 = document.getElementById("beat8");
+const beat9 = document.getElementById("beat9");
+const beat10 = document.getElementById("beat10");
+const beat11 = document.getElementById("beat11");
+const beat12 = document.getElementById("beat12");
+
+const beatSlider = document.querySelector(".slider");
+console.log(beatSlider);
+
+beatSlider.addEventListener("input", toggleBeats);
+
+function toggleBeats() {
+  const sliderValue = parseInt(this.value, 10);
+
+  console.log(sliderValue);
+  if (sliderValue > 3) {
+    showBeats(5, 16);
+  } else if (sliderValue > 2) {
+    showBeats(5, 12);
+    hideBeats(13, 16);
+  } else if (sliderValue > 1) {
+    showBeats(5, 8);
+    hideBeats(9, 16);
+  } else {
+    hideBeats(5, 16);
+  }
+}
+
+function showBeats(start, end) {
+  for (let i = start; i <= end; i++) {
+    const beat = document.querySelector(`#beat${i}`);
+    if (beat) beat.style.display = "block";
+  }
+}
+
+function hideBeats(start, end) {
+  for (let i = start; i <= end; i++) {
+    const beat = document.querySelector(`#beat${i}`);
+    if (beat) beat.style.display = "none";
   }
 }
