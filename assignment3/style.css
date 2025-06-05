@@ -2,11 +2,15 @@
   background-color: white;
   color: black;
   font-family: "Geo", sans-serif;
+  /* I considered the main uses of my webpage, would be people who just want to play along to drums, and so I wanted to make it as simple
+  to use as possible. Part of this was having minimal colour, as I didn't want to distract or overwhelm anyone. I also wanted to evoke
+  feelings of building and creating, as the function of the website is creating beats, and so I chose a font that looked like computer
+  font. This font also matches the simple-ness of the webpage */
 }
 
 header {
   background-color: lightgray;
-  min-width: 2000px;
+  width: 100%;
   font-size: 2rem;
   padding: 20px;
   position: fixed;
@@ -40,12 +44,6 @@ p {
   margin-top: 20px;
   font-size: 1.4rem;
   color: gray;
-}
-
-.refs {
-  font-size: 1.4rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 body {
@@ -87,6 +85,7 @@ extended down with it, it also makes me think of knobs on a sound engineer board
 .slider:hover::-webkit-slider-thumb {
   background-color: lightgreen;
   transition: background-color 0.3s;
+  /* Simple change of colour to indicate the slider is meant to be dragged */
 }
 
 #beat5,
@@ -154,7 +153,7 @@ I originally used visibility:hidden, but this only made it invisible, leaving a 
   cursor: pointer;
   padding: 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   box-shadow: 0 7px #999;
   /* I researched ways to make a button appear as if it is pressed (as I wanted greater interactivity), and one technique was 
   adding a box-shadow, that gets smaller when pressed, and so I decided to impliment this */
@@ -163,7 +162,6 @@ I originally used visibility:hidden, but this only made it invisible, leaving a 
 
 .buttons:hover {
   background-color: lightgreen;
-  border-radius: 10%;
 }
 
 .buttons:active {
@@ -175,6 +173,7 @@ I originally used visibility:hidden, but this only made it invisible, leaving a 
   color: white;
   background-color: lightgray;
   cursor: default;
+  /* I needed a visual indicator that the button was meant to be disabled, otherwise people may think there was a bug on my page */
 }
 
 .slider-container:disabled {
@@ -189,7 +188,7 @@ I originally used visibility:hidden, but this only made it invisible, leaving a 
 #power-img {
   position: absolute;
   top: -10px;
-  left: 5px;
+  left: 3px;
   height: 70px;
   width: 200px;
   /* I wanted the stick to poke out from the button, so it appeared as if the button, was the 'drum'. I researched ways to do this
@@ -200,7 +199,19 @@ footer {
   position: fixed;
   bottom: 0px;
   left: 0;
-  background-color: lightgray;
   width: 100%;
   padding: 5px;
+  padding-left: 10px;
+  background-color: white;
+  border-top: solid 5px lightgray;
+}
+
+.refs {
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: lightgreen;
 }

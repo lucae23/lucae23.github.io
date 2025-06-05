@@ -30,6 +30,8 @@ function handleDrop() {
     const color = window
       .getComputedStyle(draggedElement)
       .getPropertyValue("background-color");
+    // This fetches the background colour and text content of the selected drum, so that these properties can then be dropped onto a
+    // beat, giving it the drums properties
     event.target.style.backgroundColor = color;
     event.target.textContent = draggedElement.textContent;
     // I have to add event.target, as I am wanting this function to affect all the beats, and just writing beats would only affect the
@@ -60,11 +62,15 @@ resetButton.addEventListener("click", function () {
 
 function resetGame() {
   location.reload();
-  // This is an extremly simple way to clear all the beats at once, it just refreshes the page
+  // This is an extremly simple way to clear all the beats at once, it just refreshes the page, I thought this feature would be useful if
+  // users where getting overwhelmed with the amount of beats playing
 }
 
-var delay = 500;
-var a = 1;
+var delay = 300;
+// This variable is the delay in between when each audio is played. I needed to add a delay, as otherwise, all the audio files would
+// play at the exact same time. I have made it a variable as I want to be able to change the length of the delay, therefore speeding up
+// or slowing down the 'tempo' of the drums.
+var a = 0;
 // This variable is what causes my toggle buttons to work, as when the buttons are clicked, the variable is changed by 1, and each number
 // has its own function
 
@@ -74,30 +80,32 @@ console.log(speedButton);
 speedButton.addEventListener("click", toggleSpeed);
 
 function toggleSpeed() {
-  if (a == 1) {
-    delay = 400;
-    a = 2;
-    document.querySelector("#speed").innerHTML = "Level 2";
+  a = (a % 5) + 1;
+  if (a === 1) {
+    delay = 200;
+    a = 1;
+    document.querySelector("#speed").innerHTML = "[] [] [] []";
+
     // This detects if the button is pressed once, and if so, the delay variable is changed to a different number, therefore changing the
     // time in between beats, replicating a tempo adjustment. I thought this was an absolutly essential feature as people playing to the
     // track would want to experiment with playing at different speeds, for example if they want to see how fast a song sounds best at.
     // The following lines of code do the same function but to different degrees
-  } else if (a == 2) {
-    delay = 300;
-    a = 3;
-    document.querySelector("#speed").innerHTML = "Level 3";
-  } else if (a == 3) {
-    delay = 200;
-    a = 4;
-    document.querySelector("#speed").innerHTML = "Level 4";
-  } else if (a == 4) {
+  } else if (a === 2) {
     delay = 100;
-    a = 5;
-    document.querySelector("#speed").innerHTML = "Level 5";
-  } else {
+    a = 2;
+    document.querySelector("#speed").innerHTML = "[] [] [] [] []";
+  } else if (a === 3) {
     delay = 500;
-    a = 1;
-    document.querySelector("#speed").innerHTML = "Level 1";
+    a = 3;
+    document.querySelector("#speed").innerHTML = "[]";
+  } else if (a === 4) {
+    delay = 400;
+    a = 4;
+    document.querySelector("#speed").innerHTML = "[] []";
+  } else {
+    delay = 300;
+    a = 5;
+    document.querySelector("#speed").innerHTML = "[] [] []";
   }
 }
 
@@ -124,6 +132,7 @@ function playSoundFromLabels() {
   }
 
   const loopDelay = delay * visibleBeats.length;
+  // I knew that the drums needed to loop, otherwise an essential feature of the webpage (being able to play along), would not work
 
   if (!isPlaying) {
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
@@ -134,6 +143,7 @@ function playSoundFromLabels() {
       for (let i = 0; i < visibleBeats.length; i++) {
         const beat = visibleBeats[i];
         const soundName = beat.textContent.trim().toLowerCase();
+        // This begins playing the sequence, only playing the drum sounds of A. beats with text content, and B. visible beats
 
         setTimeout(() => {
           playSound(soundName);
@@ -206,22 +216,24 @@ console.log(powerImg);
 powerButton.addEventListener("click", togglePower);
 // This listens for when the power button is clicked, and if so enacts the toggle power function
 
+var b = 1;
+
 function togglePower() {
   var audio = document.getElementById("snare");
   // This creates a variable for the snare audio, meaning I can now alter the audio source, so that the snare can change sounds,
   // I wanted to do this to create different 'vibes' for the drums, as musicians who are playing along to the drums might want to
   // experiment with playing more 'soft' or more 'heavy'
-  if (a == 1) {
+  if (b == 1) {
     audio.src = "snare3.mp3";
-    a = 2;
+    b = 2;
     powerImg.src = "power1.png";
-  } else if (a == 2) {
+  } else if (b == 2) {
     audio.src = "snare2.mp3";
-    a = 3;
+    b = 3;
     powerImg.src = "power3.png";
   } else {
     audio.src = "snare.mp3";
-    a = 1;
+    b = 1;
     powerImg.src = "power2.png";
   }
 }
@@ -237,6 +249,8 @@ function toggleBeats() {
   console.log(sliderValue);
   if (sliderValue > 3) {
     showBeats(5, 16);
+    // If the slider value is greater than 3, all beats will be shown. I had to make the highest value of the slider first
+    // in the if chain, so that this is checked first and the code runs efficiently
   } else if (sliderValue > 2) {
     showBeats(5, 12);
     hideBeats(13, 16);
@@ -252,6 +266,7 @@ function showBeats(start, end) {
   for (let i = start; i <= end; i++) {
     const beat = document.querySelector(`#beat${i}`);
     if (beat) beat.style.display = "block";
+    // This creates a function that makes a beat display.block, meaning it is visible and functional on the webpage
   }
 }
 
@@ -259,5 +274,6 @@ function hideBeats(start, end) {
   for (let i = start; i <= end; i++) {
     const beat = document.querySelector(`#beat${i}`);
     if (beat) beat.style.display = "none";
+    // This creates a function that makes a beat display.none, meaning it is not visible and functional on the webpage
   }
 }

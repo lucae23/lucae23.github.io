@@ -24,6 +24,7 @@
     </header>
     <div class="slider-container">
       <input type="range" min="1" max="4" value="1" class="slider" id="myRange">
+      <!-- This slider is what determines the amount of beats, with four options creating 4, 8, 12 or 16 usable beats -->
     </div>
     <div id="interface">
       <audio src="snare.mp3" id="snare"></audio>
@@ -34,6 +35,7 @@
       <div class="drums" draggable="true">Hi-Hat</div>
       <div class="drums" draggable="true">Kick</div>
       <div class="drums" draggable="true">Tom</div>
+      <!-- These are my four options for drums, with draggable enabled so they can be dragged -->
       <div class="beats" id="beat1"></div>
       <div class="beats" id="beat2"></div>
       <div class="beats" id="beat3"></div>
@@ -70,7 +72,7 @@
               height="30"
               
             />
-      <button class="buttons" id="speed">Level 1</button>
+      <button class="buttons" id="speed">[] [] []</button>
       <button class="buttons" id="power">
       <img
               id="power-img"
