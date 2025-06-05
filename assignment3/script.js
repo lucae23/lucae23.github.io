@@ -30,9 +30,10 @@ function handleDrop() {
     const color = window
       .getComputedStyle(draggedElement)
       .getPropertyValue("background-color");
-    // const color = draggedElement.style.backgroundColor;
     event.target.style.backgroundColor = color;
     event.target.textContent = draggedElement.textContent;
+    // I have to add event.target, as I am wanting this function to affect all the beats, and just writing beats would only affect the
+    // first one
     draggedElement = null;
   }
 }
@@ -64,6 +65,8 @@ function resetGame() {
 
 var delay = 500;
 var a = 1;
+// This variable is what causes my toggle buttons to work, as when the buttons are clicked, the variable is changed by 1, and each number
+// has its own function
 
 const speedButton = document.querySelector("#speed");
 console.log(speedButton);
@@ -75,6 +78,10 @@ function toggleSpeed() {
     delay = 400;
     a = 2;
     document.querySelector("#speed").innerHTML = "Level 2";
+    // This detects if the button is pressed once, and if so, the delay variable is changed to a different number, therefore changing the
+    // time in between beats, replicating a tempo adjustment. I thought this was an absolutly essential feature as people playing to the
+    // track would want to experiment with playing at different speeds, for example if they want to see how fast a song sounds best at.
+    // The following lines of code do the same function but to different degrees
   } else if (a == 2) {
     delay = 300;
     a = 3;
@@ -102,7 +109,10 @@ let loopTimeoutId = null;
 
 function playSoundFromLabels() {
   const allBeats = document.querySelectorAll(".beats");
+  // This selects all the different beats, that are in the class of 'beats'
   let visibleBeats = [];
+  // When I originally added the ability to add and remove more bars of beats, the code would treat these beats as if they were there and
+  // a pause in the beat would occur. My solution for this was to make it so only beats that were visible would be played
 
   for (let i = 0; i < allBeats.length; i++) {
     const beat = allBeats[i];
@@ -194,9 +204,13 @@ const powerImg = document.querySelector("#power-img");
 console.log(powerImg);
 
 powerButton.addEventListener("click", togglePower);
+// This listens for when the power button is clicked, and if so enacts the toggle power function
 
 function togglePower() {
   var audio = document.getElementById("snare");
+  // This creates a variable for the snare audio, meaning I can now alter the audio source, so that the snare can change sounds,
+  // I wanted to do this to create different 'vibes' for the drums, as musicians who are playing along to the drums might want to
+  // experiment with playing more 'soft' or more 'heavy'
   if (a == 1) {
     audio.src = "snare3.mp3";
     a = 2;

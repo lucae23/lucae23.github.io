@@ -42,6 +42,12 @@ p {
   color: gray;
 }
 
+.refs {
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 body {
   font-size: 1.5rem;
   margin: 220px;
@@ -56,7 +62,7 @@ body {
   border-radius: 15px;
 }
 /* I chose to do a slider here instead of a button, as I thought it would look cool if when the slider was 'pulled down', the boxes 
-extended down with it*/
+extended down with it, it also makes me think of knobs on a sound engineer board*/
 
 .slider {
   -webkit-appearance: none;
@@ -134,7 +140,7 @@ I originally used visibility:hidden, but this only made it invisible, leaving a 
   /* This is to indicate the box can be selected */
 }
 
-footer {
+.butts {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -186,4 +192,15 @@ footer {
   left: 5px;
   height: 70px;
   width: 200px;
+  /* I wanted the stick to poke out from the button, so it appeared as if the button, was the 'drum'. I researched ways to do this
+  and found that making the position absolute and then moving the icon into the right position achieved this */
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  background-color: lightgray;
+  width: 100%;
+  padding: 5px;
 }
