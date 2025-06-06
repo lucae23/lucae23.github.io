@@ -163,6 +163,7 @@ function playSoundFromLabels() {
     isPlaying = false;
     speedButton.disabled = false;
     beatSlider.disabled = false;
+    // This ensures this button acts as a toggle, as two different buttons for play and pause uses too much space and doesn't look as simple
 
     if (loopTimeoutId) {
       clearTimeout(loopTimeoutId);
@@ -245,6 +246,7 @@ beatSlider.addEventListener("input", toggleBeats);
 
 function toggleBeats() {
   const sliderValue = parseInt(this.value, 10);
+  // this detects the value of the slider, and based on that value, the number of beats will change
 
   console.log(sliderValue);
   if (sliderValue > 3) {
@@ -267,6 +269,8 @@ function showBeats(start, end) {
     const beat = document.querySelector(`#beat${i}`);
     if (beat) beat.style.display = "block";
     // This creates a function that makes a beat display.block, meaning it is visible and functional on the webpage
+    // originally I had all the beat listened out on the toggleBeats function, but I researched and found you could make function for hiding
+    // showing, and then just having a start and end value that it applies to
   }
 }
 
